@@ -504,12 +504,17 @@
             margin-bottom: 5px;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-          width: 100%;
-          flex: 1;
-        }
-        }
+        .contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  flex: 1;
+}
 
        .form-group {
           display: flex;
@@ -712,10 +717,7 @@
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-form {
-                flex-direction: column;
-                border-radius: 10px;
-            }
+     
             .newsletter-form {
                 flex-direction: column;
                 border-radius: 10px;
