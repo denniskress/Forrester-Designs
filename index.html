@@ -243,103 +243,59 @@
             transform: scale(1.05);
         }
 
-        /* Portfolio Section */
-        .portfolio {
-            padding: 120px 0;
-            background: var(--white);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 {
-            font-size: 3em;
-            font-weight: 300;
-            color: var(--forest-deep);
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-
-        .section-header p {
-            font-size: 1.2em;
-            color: var(--moss);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s ease;
-            position: relative;
-        }
-        
-        .portfolio-image::before {
-            content: attr(data-project);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--white);
-            font-size: 1.5em;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.8;
-        }
-
-        .portfolio-item:hover .portfolio-image {
-            transform: scale(1.1);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(26, 58, 46, 0.9), transparent);
-            padding: 40px 30px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-
-        .portfolio-overlay h3 {
-            color: var(--white);
-            font-size: 1.8em;
-            font-weight: 300;
-            margin-bottom: 10px;
-        }
-
-        .portfolio-overlay p {
-            color: var(--cream);
-            font-size: 1em;
-        }
+       <!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Our Portfolio</h2>
+      <p>Transforming spaces into natural sanctuaries</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--forest-deep), var(--sage-green));" data-project="Living Room"></div>
+        <div class="portfolio-overlay">
+          <h3>The Woodland Retreat</h3>
+          <p>A seamless blend of indoor and outdoor living</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--terracotta), var(--warm-sand));" data-project="Kitchen"></div>
+        <div class="portfolio-overlay">
+          <h3>Sunset Villa</h3>
+          <p>Mediterranean warmth meets modern elegance</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--sage-green), var(--olive));" data-project="Bedroom"></div>
+        <div class="portfolio-overlay">
+          <h3>The Garden House</h3>
+          <p>Where botanical beauty meets refined living</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--moss), var(--forest-medium));" data-project="Bathroom"></div>
+        <div class="portfolio-overlay">
+          <h3>Moss Creek Estate</h3>
+          <p>Natural textures and organic luxury</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--olive), var(--warm-sand));" data-project="Entryway"></div>
+        <div class="portfolio-overlay">
+          <h3>Olive Grove Manor</h3>
+          <p>Timeless elegance inspired by nature</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--cream), var(--sage-green));" data-project="Outdoor Space"></div>
+        <div class="portfolio-overlay">
+          <h3>Coastal Pines</h3>
+          <p>Where forest meets the sea</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         /* Services Section */
         .services {
