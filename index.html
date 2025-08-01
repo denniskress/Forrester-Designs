@@ -1007,12 +1007,32 @@
             observer.observe(el);
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We\'ll be in touch within 24 hours to schedule your consultation.');
-            this.reset();
-        });
+       // Form submission with AJAX to FormSubmit
+            document.getElementById("contactForm").addEventListener("submit", async function (e) {
+                e.preventDefault();
+            
+                const form = e.target;
+                const data = new FormData(form);
+            
+                const response = await fetch("https://formsubmit.co/ajax/denniskress04@gmail.com", {
+                    method: "POST",
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+            
+                const statusDiv = document.getElementById("form-status");
+            
+                if (response.ok) {
+                    statusDiv.textContent = "Thank you! We'll be in touch shortly.";
+                    statusDiv.style.display = "block";
+                    form.reset();
+                } else {
+                    statusDiv.textContent = "Oops! Something went wrong. Please try again.";
+                    statusDiv.style.display = "block";
+                }
+            });
 
         // Newsletter form
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
