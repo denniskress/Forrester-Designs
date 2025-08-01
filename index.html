@@ -342,6 +342,57 @@
         }
 
         /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: var(--sage-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            color: var(--forest-deep);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: var(--charcoal);
+            line-height: 1.8;
+        }
+
         /* Blog Section */
         .blog {
             padding: 120px 0;
@@ -419,10 +470,10 @@
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
+           display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .contact-info h2 {
@@ -513,6 +564,7 @@
             background: var(--warm-sand);
             color: var(--forest-deep);
             transform: translateY(-2px);
+        }
 
         /* Newsletter Section */
         .newsletter {
@@ -807,7 +859,7 @@
                           Saturday: By appointment
                         </div>
                       </div>
-                    </div>
+                    </div>e
                     
                     <!-- Right column: Contact Form -->
                     <div class="contact-form">
@@ -832,7 +884,6 @@
                       </form>
                       <div id="form-status" style="margin-top:20px; display:none; color: var(--cream); font-weight:600;"></div>
                     </div>
-
     </section>
 
     <!-- Newsletter Section -->
