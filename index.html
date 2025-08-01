@@ -856,22 +856,28 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="https://formsubmit.co/send/your.email@gmail.com" method="POST">
-                      <input type="hidden" name="_redirect" value="https://denniskress.github.io/Forrester-Designs/thank-you.html">
-                      <input type="text" name="_honey" style="display:none">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="_replyto" required>                     
-                        </div>
-                        <div class="form-group">
-                            <label for="project">Tell Us About Your Project</label>
-                            <textarea id="project" name="project" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Schedule Consultation</button>
+                   <form action="https://formsubmit.co/denniskress04@gmail.com" method="POST">
+                      <!-- Anti-spam -->
+                      <input type="hidden" name="_honey" style="display:none">
+                      <input type="hidden" name="_captcha" value="false">
+                      
+                      <!-- Redirect after submit -->
+                      <input type="hidden" name="Thank you, we will be in touch!" value="https://your-username.github.io/your-repo/thank-you.html">
+                      
+                      <!-- Actual form fields -->
+                      <div class="form-group">
+                          <label for="name">Your Name</label>
+                          <input type="text" id="name" name="name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email Address</label>
+                          <input type="email" id="email" name="email" required>                     
+                      </div>
+                      <div class="form-group">
+                          <label for="project">Tell Us About Your Project</label>
+                          <textarea id="project" name="message" required></textarea>
+                      </div>
+                      <button type="submit" class="submit-btn">Schedule Consultation</button>
                     </form>
                 </div>
             </div>
