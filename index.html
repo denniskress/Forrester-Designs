@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- This section contains important setup information that browsers need but visitors don't see -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forrester Designs - Luxury Residential Interior Design</title>
+    
+    <!-- START OF STYLING SECTION - This controls how everything looks on your website -->
     <style>
+        /* Basic reset - ensures consistent appearance across different browsers */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* COLOR PALETTE - Change these values to update colors throughout your entire site */
         :root {
-            /* Forest Theme Colors */
-            --forest-deep: #1a3a2e;
-            --forest-medium: #2d5a45;
-            --sage-green: #7d9d88;
-            --moss: #8fa68e;
+            /* Forest Theme Colors - Your main green color scheme */
+            --forest-deep: #1a3a2e;      /* Dark forest green */
+            --forest-medium: #2d5a45;    /* Medium forest green */
+            --sage-green: #7d9d88;       /* Soft sage green */
+            --moss: #8fa68e;             /* Moss green */
             
-            /* Mediterranean Accents */
-            --terracotta: #c67b5c;
-            --warm-sand: #e8dcc6;
-            --olive: #94a187;
-            --cream: #faf6f0;
+            /* Mediterranean Accent Colors - Warm tones that complement the greens */
+            --terracotta: #c67b5c;       /* Warm terra cotta orange */
+            --warm-sand: #e8dcc6;        /* Sandy beige */
+            --olive: #94a187;            /* Olive green */
+            --cream: #faf6f0;            /* Soft cream white */
             
-            /* Neutrals */
-            --charcoal: #2c2c2c;
-            --light-gray: #f5f5f5;
-            --white: #ffffff;
+            /* Neutral Colors - Basic blacks, whites, and grays */
+            --charcoal: #2c2c2c;         /* Dark gray/black for text */
+            --light-gray: #f5f5f5;       /* Light gray for backgrounds */
+            --white: #ffffff;            /* Pure white */
         }
 
+        /* Default text and page settings */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -37,107 +43,123 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* ============================================
+           NAVIGATION BAR - The menu at the top of your page
+           ============================================ */
         nav {
-            position: fixed;
+            position: fixed;              /* Stays at top when scrolling */
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.95);  /* Slightly transparent white */
+            backdrop-filter: blur(10px);            /* Blurs content behind nav */
+            z-index: 1000;                          /* Ensures nav stays on top */
+            transition: all 0.3s ease;              /* Smooth animation */
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05); /* Subtle shadow */
         }
 
+        /* Makes navigation bar smaller when user scrolls down */
         nav.scrolled {
             padding: 15px 0;
         }
 
+        /* Container that holds your logo and menu items */
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1400px;           /* Maximum width of navigation */
+            margin: 0 auto;              /* Centers the navigation */
+            padding: 20px 40px;          /* Space around content */
+            display: flex;               /* Arranges items horizontally */
+            justify-content: space-between; /* Spreads items apart */
+            align-items: center;         /* Vertically centers items */
         }
 
+        /* Your company name/logo in the navigation */
         .logo {
             font-size: 24px;
-            font-weight: 300;
-            letter-spacing: 3px;
+            font-weight: 300;            /* Thin font weight */
+            letter-spacing: 3px;         /* Space between letters */
             color: var(--forest-deep);
         }
 
+        /* The list of menu items (Home, About, etc.) */
         .nav-menu {
-            display: flex;
-            gap: 40px;
-            list-style: none;
+            display: flex;               /* Arranges items horizontally */
+            gap: 40px;                   /* Space between menu items */
+            list-style: none;            /* Removes bullet points */
             align-items: center;
         }
 
+        /* Individual menu links */
         .nav-menu a {
-            text-decoration: none;
+            text-decoration: none;       /* Removes underline */
             color: var(--forest-medium);
             font-size: 14px;
             letter-spacing: 1px;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
+            transition: color 0.3s ease; /* Smooth color change on hover */
+            text-transform: uppercase;   /* Makes text ALL CAPS */
         }
 
+        /* Changes menu link color when mouse hovers over it */
         .nav-menu a:hover {
             color: var(--terracotta);
         }
 
+        /* The "Book Consultation" button in navigation */
         .consultation-btn {
             background: var(--forest-deep);
             color: var(--white);
-            padding: 12px 30px;
-            border: none;
-            cursor: pointer;
+            padding: 12px 30px;          /* Space inside button */
+            border: none;                /* No border */
+            cursor: pointer;             /* Shows hand cursor on hover */
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 12px;
         }
 
+        /* Changes button appearance when mouse hovers over it */
         .consultation-btn:hover {
             background: var(--terracotta);
-            transform: translateY(-2px);
+            transform: translateY(-2px); /* Moves button up slightly */
         }
 
-        /* Hero Section */
+        /* ============================================
+           HERO SECTION - The large banner area at the top of your homepage
+           ============================================ */
         .hero {
-            height: 100vh;
+            height: 100vh;               /* Full height of browser window */
             position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center;         /* Centers content vertically */
+            justify-content: center;     /* Centers content horizontally */
             overflow: hidden;
             background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest-medium) 50%, var(--sage-green) 100%);
         }
 
+        /* Container for the rotating background colors */
         .hero-slideshow {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -1;                 /* Places slideshow behind text */
         }
 
+        /* Individual slide in the hero background */
         .hero-slide {
             position: absolute;
             width: 100%;
             height: 100%;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
+            opacity: 0;                  /* Invisible by default */
+            transition: opacity 2s ease-in-out; /* Fades in/out over 2 seconds */
         }
 
+        /* Makes the current slide visible */
         .hero-slide.active {
             opacity: 1;
         }
 
+        /* Adds a dark overlay to make text more readable */
         .hero-slide::after {
             content: '';
             position: absolute;
@@ -148,6 +170,7 @@
             background: linear-gradient(to bottom, rgba(26, 58, 46, 0.3), rgba(26, 58, 46, 0.5));
         }
         
+        /* Different gradient colors for each slide */
         .slide-1 {
             background: linear-gradient(45deg, var(--forest-deep), var(--sage-green));
         }
@@ -160,27 +183,31 @@
             background: linear-gradient(45deg, var(--olive), var(--moss));
         }
 
+        /* The main text content in the hero section */
         .hero-content {
             text-align: center;
             color: var(--white);
-            z-index: 1;
-            animation: fadeInUp 1.5s ease;
+            z-index: 1;                  /* Places text above background */
+            animation: fadeInUp 1.5s ease; /* Animates text appearance */
         }
 
+        /* Main headline text */
         .hero-content h1 {
-            font-size: 4em;
+            font-size: 4em;              /* Large text size */
             font-weight: 300;
             letter-spacing: 5px;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
 
+        /* Tagline text under the headline */
         .hero-content p {
             font-size: 1.2em;
             margin-bottom: 40px;
             letter-spacing: 2px;
         }
 
+        /* Animation that makes content fade in and slide up */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -192,25 +219,30 @@
             }
         }
 
-        /* About Section */
+        /* ============================================
+           ABOUT SECTION - Information about your company
+           ============================================ */
         .about {
-            padding: 120px 0;
-            background: var(--cream);
+            padding: 120px 0;            /* Large space above and below */
+            background: var(--cream);    /* Cream background color */
         }
 
+        /* Container that limits content width and centers it */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
         }
 
+        /* Two-column layout for about section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 80px;                      /* Space between columns */
             align-items: center;
         }
 
+        /* Styling for the about section heading */
         .about-text h2 {
             font-size: 3em;
             font-weight: 300;
@@ -219,41 +251,49 @@
             letter-spacing: 2px;
         }
 
+        /* Styling for about section paragraphs */
         .about-text p {
             font-size: 1.1em;
-            line-height: 1.8;
+            line-height: 1.8;            /* Space between lines */
             color: var(--charcoal);
             margin-bottom: 20px;
         }
 
+        /* Container for the about section image */
         .about-image {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 10px;         /* Rounded corners */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Shadow effect */
         }
 
+        /* The actual image in the about section */
         .about-image img {
             width: 100%;
             height: auto;
             transition: transform 0.5s ease;
         }
 
+        /* Zooms in slightly when hovering over image */
         .about-image:hover img {
             transform: scale(1.05);
         }
 
-        /* Portfolio Section */
+        /* ============================================
+           PORTFOLIO SECTION - Showcases your work
+           ============================================ */
         .portfolio {
             padding: 120px 0;
             background: var(--white);
         }
 
+        /* Header styling used in multiple sections */
         .section-header {
             text-align: center;
             margin-bottom: 80px;
         }
 
+        /* Main heading in sections */
         .section-header h2 {
             font-size: 3em;
             font-weight: 300;
@@ -262,31 +302,36 @@
             margin-bottom: 20px;
         }
 
+        /* Subheading in sections */
         .section-header p {
             font-size: 1.2em;
             color: var(--moss);
         }
 
+        /* Grid layout for portfolio items */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
             gap: 40px;
         }
 
+        /* Individual portfolio item container */
         .portfolio-item {
             position: relative;
             overflow: hidden;
-            cursor: pointer;
+            cursor: pointer;             /* Shows hand cursor */
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
 
+        /* Lifts portfolio item when hovering */
         .portfolio-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
+        /* Portfolio image/background */
         .portfolio-image {
             width: 100%;
             height: 400px;
@@ -296,8 +341,9 @@
             position: relative;
         }
         
+        /* Text overlay on portfolio images */
         .portfolio-image::before {
-            content: attr(data-project);
+            content: attr(data-project); /* Gets text from data-project attribute */
             position: absolute;
             top: 50%;
             left: 50%;
@@ -310,10 +356,12 @@
             opacity: 0.8;
         }
 
+        /* Zooms portfolio image on hover */
         .portfolio-item:hover .portfolio-image {
             transform: scale(1.1);
         }
 
+        /* Hidden text that slides up on hover */
         .portfolio-overlay {
             position: absolute;
             bottom: 0;
@@ -321,14 +369,16 @@
             right: 0;
             background: linear-gradient(to top, rgba(26, 58, 46, 0.9), transparent);
             padding: 40px 30px;
-            transform: translateY(100%);
+            transform: translateY(100%); /* Hidden below the item */
             transition: transform 0.3s ease;
         }
 
+        /* Shows overlay text when hovering */
         .portfolio-item:hover .portfolio-overlay {
             transform: translateY(0);
         }
 
+        /* Overlay heading text */
         .portfolio-overlay h3 {
             color: var(--white);
             font-size: 1.8em;
@@ -336,44 +386,52 @@
             margin-bottom: 10px;
         }
 
+        /* Overlay description text */
         .portfolio-overlay p {
             color: var(--cream);
             font-size: 1em;
         }
 
-        /* Services Section */
+        /* ============================================
+           SERVICES SECTION - Your service offerings
+           ============================================ */
         .services {
             padding: 120px 0;
             background: var(--light-gray);
         }
 
+        /* Three-column grid for services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
+            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+            gap: 40px;
             margin-top: 60px;
         }
 
+        /* Individual service card */
         .service-card {
             text-align: center;
-            padding: 60px 40px;
+            padding: 50px 30px;
             background: var(--white);
             border-radius: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: relative;
         }
 
+        /* Lifts service card on hover */
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
+        /* Circular icon at top of service card */
         .service-icon {
             width: 80px;
             height: 80px;
-            margin: 0 auto 30px;
+            margin: 0 auto 30px;        /* Centers icon and adds space below */
             background: var(--sage-green);
-            border-radius: 50%;
+            border-radius: 50%;          /* Makes it circular */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -381,101 +439,71 @@
             color: var(--white);
         }
 
+        /* Service name/title */
         .service-card h3 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: var(--forest-deep);
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .service-card p {
-            color: var(--charcoal);
-            line-height: 1.8;
-        }
-
-        /* Blog Section */
-        .blog {
-            padding: 120px 0;
-            background: var(--white);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .blog-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .blog-content {
-            padding: 30px;
-        }
-
-        .blog-meta {
-            color: var(--terracotta);
-            font-size: 0.9em;
             margin-bottom: 15px;
-            text-transform: uppercase;
+            font-weight: 400;
             letter-spacing: 1px;
         }
 
-        .blog-content h3 {
-            font-size: 1.4em;
-            color: var(--forest-deep);
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        .blog-content p {
-            color: var(--charcoal);
-            line-height: 1.6;
+        /* Service price display */
+        .service-price {
+            font-size: 1.3em;
+            color: var(--terracotta);    /* Orange color for price */
+            font-weight: 300;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
-        .read-more {
-            color: var(--forest-medium);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        /* Service description text */
+        .service-card p {
+            color: var(--charcoal);
+            line-height: 1.8;
+            font-size: 1em;
+            margin-bottom: 30px;
         }
 
-        .read-more:hover {
-            color: var(--terracotta);
+        /* Button in service cards */
+        .service-btn {
+            background: var(--forest-deep);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            text-decoration: none;       /* Removes underline */
+            display: inline-block;
         }
 
-       /* Contact Section */
+        /* Changes button on hover */
+        .service-btn:hover {
+            background: var(--terracotta);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           CONTACT SECTION - Contact form and information
+           ============================================ */
         .contact {
             padding: 120px 0;
-            background: var(--forest-deep);
+            background: var(--forest-deep); /* Dark green background */
             color: var(--white);
         }
 
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;  /* Form gets more space */
-  gap: 80px;
-  align-items: start;
-}
+        /* Two-column layout for contact section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* Form column is twice as wide */
+            gap: 80px;
+            align-items: start;
+        }
 
+        /* Contact section heading */
         .contact-info h2 {
             font-size: 3em;
             font-weight: 300;
@@ -483,6 +511,7 @@
             letter-spacing: 2px;
         }
 
+        /* Contact section intro text */
         .contact-info p {
             font-size: 1.2em;
             line-height: 1.8;
@@ -490,41 +519,47 @@
             color: var(--cream);
         }
 
+        /* Container for address, phone, hours */
         .contact-details {
             margin-bottom: 40px;
         }
 
+        /* Individual contact detail blocks */
         .contact-details div {
             margin-bottom: 20px;
             color: var(--cream);
         }
 
+        /* Labels like "Studio Address", "Contact", etc. */
         .contact-details strong {
             color: var(--white);
-            display: block;
+            display: block;              /* Puts label on its own line */
             margin-bottom: 5px;
         }
 
+        /* Contact form layout */
         .contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  flex: 1;
-}
-
-       .form-group {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;      /* Stacks form fields vertically */
+            gap: 20px;
         }
-        
 
+        /* Makes form inputs full width */
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            flex: 1;
+        }
+
+        /* Container for each form field */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Form field labels */
         .form-group label {
             display: flex;
             margin-bottom: 10px;
@@ -534,29 +569,33 @@
             letter-spacing: 1px;
         }
 
+        /* Form input fields and text areas */
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 15px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.1); /* Slightly transparent white */
             border: 1px solid rgba(255,255,255,0.2);
             color: var(--white);
             font-size: 1em;
             transition: all 0.3s ease;
         }
 
+        /* Changes input appearance when clicked/focused */
         .form-group input:focus,
         .form-group textarea:focus {
-            outline: none;
+            outline: none;               /* Removes browser default outline */
             background: rgba(255,255,255,0.15);
             border-color: var(--terracotta);
         }
 
+        /* Message text area specific styling */
         .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+            resize: vertical;            /* Can only resize vertically */
+            min-height: 120px;           /* Minimum height */
         }
 
+        /* Submit button for contact form */
         .submit-btn {
             background: var(--terracotta);
             color: var(--white);
@@ -567,82 +606,34 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s ease;
-            width: 100%;
+            width: 100%;                 /* Full width button */
         }
 
+        /* Changes submit button on hover */
         .submit-btn:hover {
             background: var(--warm-sand);
             color: var(--forest-deep);
             transform: translateY(-2px);
         }
 
-        /* Newsletter Section */
-        .newsletter {
-            padding: 80px 0;
-            background: var(--warm-sand);
-            text-align: center;
-        }
-
-        .newsletter h3 {
-            font-size: 2.5em;
-            color: var(--forest-deep);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .newsletter p {
-            font-size: 1.2em;
-            color: var(--charcoal);
-            margin-bottom: 40px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 50px;
-            overflow: hidden;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 20px 30px;
-            border: none;
-            font-size: 1em;
-            background: var(--white);
-        }
-
-        .newsletter-form button {
-            padding: 20px 40px;
-            background: var(--forest-deep);
-            color: var(--white);
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            background: var(--terracotta);
-        }
-
-        /* Footer */
+        /* ============================================
+           FOOTER - Bottom section with links and info
+           ============================================ */
         footer {
-            background: var(--charcoal);
+            background: var(--charcoal);  /* Dark gray background */
             color: var(--cream);
             padding: 60px 0 30px;
         }
 
+        /* Grid layout for footer sections */
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
             gap: 40px;
             margin-bottom: 40px;
         }
 
+        /* Footer section headings */
         .footer-section h4 {
             color: var(--white);
             margin-bottom: 20px;
@@ -650,122 +641,139 @@
             font-weight: 400;
         }
 
+        /* Footer lists (removes bullets) */
         .footer-section ul {
             list-style: none;
         }
 
+        /* Space between footer list items */
         .footer-section ul li {
             margin-bottom: 10px;
         }
 
+        /* Footer links */
         .footer-section a {
             color: var(--cream);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
+        /* Changes footer link color on hover */
         .footer-section a:hover {
             color: var(--terracotta);
         }
 
+        /* Social media icon container */
         .social-links {
             display: flex;
             gap: 20px;
             margin-top: 20px;
         }
 
+        /* Individual social media icons */
         .social-links a {
             width: 40px;
             height: 40px;
             background: rgba(255,255,255,0.1);
-            border-radius: 50%;
+            border-radius: 50%;          /* Makes them circular */
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
         }
 
+        /* Changes social icon on hover */
         .social-links a:hover {
             background: var(--terracotta);
             transform: translateY(-3px);
         }
 
+        /* Copyright text at very bottom */
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.1); /* Thin line above */
             color: var(--cream);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* ============================================
+           MOBILE RESPONSIVE DESIGN - Adjusts layout for phones/tablets
+           ============================================ */
+        @media (max-width: 768px) {     /* Applies to screens smaller than 768px */
+            /* Hides menu on mobile (you'd typically add a mobile menu button) */
             .nav-menu {
                 display: none;
             }
             
+            /* Makes hero text smaller on mobile */
             .hero-content h1 {
                 font-size: 2.5em;
             }
             
+            /* Changes 2-column layouts to 1 column on mobile */
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
+            /* Makes all grids single column on mobile */
             .portfolio-grid,
-            .services-grid,
-            .blog-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
-            }
-     
-            .newsletter-form {
-                flex-direction: column;
-                border-radius: 10px;
-            }
-            
-            .newsletter-form button {
-                border-radius: 0 0 10px 10px;
             }
         }
 
-        /* Loading Animation */
+        /* ============================================
+           SCROLL ANIMATIONS - Makes elements fade in as you scroll
+           ============================================ */
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 0;                  /* Starts invisible */
+            transform: translateY(30px); /* Starts 30px lower */
             transition: all 0.8s ease;
         }
 
+        /* Makes element visible when scrolled into view */
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
+    <!-- END OF STYLING SECTION -->
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- ============================================
+         NAVIGATION BAR - This is the menu that stays at the top of your page
+         ============================================ -->
     <nav id="navbar">
         <div class="nav-container">
+            <!-- Your company name/logo -->
             <div class="logo">FORRESTER DESIGN</div>
+            
+            <!-- Navigation menu items -->
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#blog">Journal</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="consultation-btn" onclick="scrollToContact()">Book Consultation</button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ============================================
+         HERO SECTION - The large banner with your company name and tagline
+         ============================================ -->
     <section class="hero" id="home">
+        <!-- Background slideshow container -->
         <div class="hero-slideshow">
             <div class="hero-slide slide-1 active"></div>
             <div class="hero-slide slide-2"></div>
             <div class="hero-slide slide-3"></div>
         </div>
+        
+        <!-- Main text content -->
         <div class="hero-content">
             <h1>Forrester Designs</h1>
             <p>Love Where You Live</p>
@@ -773,31 +781,43 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ============================================
+         ABOUT SECTION - Information about your company
+         ============================================ -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-content fade-in">
+                <!-- Left column: Text content -->
                 <div class="about-text">
                     <h2>Bringing Nature Home</h2>
-                    <p>At Forrester Designs, we believe that asthetic and function can coexist perfect harmony within your living space.</p>
+                    <p>At Forrester Designs, we believe that aesthetic and function can coexist in perfect harmony within your living space.</p>
                     <p>Our design philosophy centers on creating sanctuaries that reflect your personality. Each project is a carefully curated journey that transforms houses into homes.</p>
                     <p>Founded on the principle that great design should elevate our daily experiences by curating residential interiors that tell your unique story.</p>
                 </div>
+                
+                <!-- Right column: Image placeholder -->
                 <div class="about-image">
+                    <!-- This is a placeholder - replace with an actual image later -->
                     <div style="width: 100%; height: 600px; background: linear-gradient(135deg, var(--forest-medium), var(--warm-sand)); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: 300; letter-spacing: 3px;">DESIGN STUDIO</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- ============================================
+         PORTFOLIO SECTION - Showcases your design projects
+         ============================================ -->
     <section class="portfolio" id="portfolio">
         <div class="container">
+            <!-- Section title and subtitle -->
             <div class="section-header fade-in">
                 <h2>Our Portfolio</h2>
                 <p>Transforming spaces into sanctuaries</p>
             </div>
+            
+            <!-- Grid of portfolio items -->
             <div class="portfolio-grid">
+                <!-- Portfolio Item 1: Sun Room -->
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, var(--forest-deep), var(--sage-green));" data-project="Sun Room"></div>
                     <div class="portfolio-overlay">
@@ -805,6 +825,8 @@
                         <p>Soak in the nature and light</p>
                     </div>
                 </div>
+                
+                <!-- Portfolio Item 2: Living Room -->
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, var(--terracotta), var(--warm-sand));" data-project="Living Room"></div>
                     <div class="portfolio-overlay">
@@ -812,6 +834,8 @@
                         <p>Love where you live</p>
                     </div>
                 </div>
+                
+                <!-- Portfolio Item 3: Bedroom -->
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, var(--sage-green), var(--olive));" data-project="Bedroom"></div>
                     <div class="portfolio-overlay">
@@ -819,6 +843,8 @@
                         <p>Sleep in peace and comfort</p>
                     </div>
                 </div>
+                
+                <!-- Portfolio Item 4: Kitchen -->
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, var(--moss), var(--forest-medium));" data-project="Kitchen"></div>
                     <div class="portfolio-overlay">
@@ -826,6 +852,8 @@
                         <p>Create the kitchen of your dreams</p>
                     </div>
                 </div>
+                
+                <!-- Portfolio Item 5: Bathroom -->
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, var(--olive), var(--warm-sand));" data-project="Bathroom"></div>
                     <div class="portfolio-overlay">
@@ -833,108 +861,141 @@
                         <p>Make your bathroom your very own zen spa</p>
                     </div>
                 </div>
+                
+                <!-- Portfolio Item 6: Entry Way -->
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image" style="background: linear-gradient(135deg, var(--cream), var(--sage-green));" data-project="Entry Way"></div>
                     <div class="portfolio-overlay">
                         <h3>Coastal Pines</h3>
-                        <p>Trasnform the first impression of your home</p>
+                        <p>Transform the first impression of your home</p>
                     </div>
                 </div>
-            </section>
-
-                
-<!-- Contact Section -->
-                            <section class="contact" id="contact">
-                                <div class="container">
-                                    <div class="contact-content fade-in">
-
-                  
-
-  <!-- Left: Text and Info -->
- <div class="contact-header">
-    <h2>Let's Create Together</h2>
-    <p>Ready to transform your home into a natural sanctuary? We'd love to hear about your project and bring your vision to life.</p>
-</div>
-
-<div class="contact-content fade-in">
-    <div class="contact-info">
-        <div class="contact-details">
-            <div>
-                <strong>Studio Address</strong>
-                456 Forest Lane, Design District<br>
-                Los Angeles, CA 90028
-            </div>
-            <div>
-                <strong>Contact</strong>
-                hello@forresterdesigns.com<br>
-                (310) 555-0123
-            </div>
-            <div>
-                <strong>Hours</strong>
-                Monday - Friday: 9am - 6pm<br>
-                Saturday: By appointment
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="contact-form">
-        <form id="contactForm">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New Consultation Request">
-            <input type="hidden" name="_template" value="table">
-
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
+    <!-- ============================================
+         SERVICES SECTION - Your three service offerings with pricing
+         ============================================ -->
+    <section class="services" id="services">
+        <div class="container">
+            <!-- Section title and subtitle -->
+            <div class="section-header fade-in">
+                <h2>Our Services</h2>
+                <p>Tailored design solutions for every vision and budget</p>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+            
+            <!-- Three service cards in a row -->
+            <div class="services-grid">
+                <!-- Service 1: Mood Board -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>Design Vision Board</h3>
+                    <div class="service-price">$100</div>
+                    <p>Begin your design journey with a professionally curated mood board that captures your style, color palette, and aesthetic vision. Perfect for DIY enthusiasts seeking professional direction.</p>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+                
+                <!-- Service 2: Consultation -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">💬</div>
+                    <h3>Design Consultation</h3>
+                    <div class="service-price">$250</div>
+                    <p>One-on-one expert guidance during a comprehensive 60-minute session. We'll discuss your space, provide actionable recommendations, and create a roadmap for your design transformation.</p>
+                    <a href="#contact" class="service-btn">Book Session</a>
+                </div>
+                
+                <!-- Service 3: Full Design -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏡</div>
+                    <h3>Full Design Services</h3>
+                    <div class="service-price">Custom Pricing</div>
+                    <p>Complete end-to-end interior design from concept to installation. We handle everything: space planning, material selection, furniture sourcing, and project management tailored to your unique space.</p>
+                    <a href="#contact" class="service-btn">Inquire Now</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="project">Tell Us About Your Project</label>
-                <textarea id="project" name="message" required></textarea>
+        </div>
+    </section>
+                
+    <!-- ============================================
+         CONTACT SECTION - Contact form and company information
+         ============================================ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <!-- Left column: Contact information -->
+                <div class="contact-info">
+                    <h2>Let's Create Together</h2>
+                    <p>Ready to transform your home into a natural sanctuary? We'd love to hear about your project and bring your vision to life.</p>
+                    
+                    <!-- Company details -->
+                    <div class="contact-details">
+                        <div>
+                            <strong>Studio Address</strong>
+                            456 Forest Lane, Design District<br>
+                            Los Angeles, CA 90028
+                        </div>
+                        <div>
+                            <strong>Contact</strong>
+                            hello@forresterdesigns.com<br>
+                            (310) 555-0123
+                        </div>
+                        <div>
+                            <strong>Hours</strong>
+                            Monday - Friday: 9am - 6pm<br>
+                            Saturday: By appointment
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column: Contact form -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <!-- Hidden fields for FormSubmit service -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Consultation Request">
+                        <input type="hidden" name="_template" value="table">
+
+                        <!-- Name field -->
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <!-- Email field -->
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <!-- Message field -->
+                        <div class="form-group">
+                            <label for="project">Tell Us About Your Project</label>
+                            <textarea id="project" name="message" required></textarea>
+                        </div>
+                        
+                        <!-- Submit button -->
+                        <button type="submit" class="submit-btn">Schedule Consultation</button>
+                    </form>
+                    
+                    <!-- Success/error message display area -->
+                    <div id="form-status" style="margin-top:20px; display: none; text-align: center; color: var(--cream); font-weight:600;"></div>
+                </div>
             </div>
-            <button type="submit" class="submit-btn">Schedule Consultation</button>
-        </form>
-        <div id="form-status" style="margin-top:20px; display: none; text-align: center; color: var(--cream); font-weight:600;"></div>
-    </div>
-</div>
-</section>
+        </div>
+    </section>
 
-                                        
-
- <!-- Newsletter Section -->
-                   <section class="newsletter">
-  <div class="container">
-    <div class="newsletter-content fade-in">
-
-      <!-- Left: Text -->
-      <div class="newsletter-text">
-        <h3>Stay Inspired</h3>
-        <p>Join our community for design tips, project reveals, and exclusive insights</p>
-      </div>
-
-      <!-- Right: Form -->
-      <div>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
-        </form>
- <div id="newsletter-status" style="margin-top:20px; display: flex; align-items: center; justify-content: center"></div>     
-      </div>
-      </div>
-
-  </div>
-</section>
-
-    <!-- Footer -->
+    <!-- ============================================
+         FOOTER - Links and additional information at bottom of page
+         ============================================ -->
     <footer>
         <div class="container">
             <div class="footer-content">
+                <!-- Column 1: Company info and social media -->
                 <div class="footer-section">
                     <h4>Forrester Designs</h4>
                     <p>Creating natural sanctuaries that blend forest tranquility with Mediterranean warmth.</p>
+                    <!-- Social media icons -->
                     <div class="social-links">
                         <a href="#" aria-label="Instagram">📷</a>
                         <a href="#" aria-label="Pinterest">📌</a>
@@ -942,15 +1003,19 @@
                         <a href="#" aria-label="Houzz">🏠</a>
                     </div>
                 </div>
+                
+                <!-- Column 2: Quick navigation links -->
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#blog">Design Journal</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 3: Resources -->
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul>
@@ -960,6 +1025,8 @@
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 4: Shop links -->
                 <div class="footer-section">
                     <h4>Shop</h4>
                     <ul>
@@ -970,50 +1037,59 @@
                     </ul>
                 </div>
             </div>
+            
+            <!-- Copyright notice -->
             <div class="footer-bottom">
                 <p>&copy; 2025 Forrester Designs. All rights reserved. | Privacy Policy | Terms of Service</p>
             </div>
         </div>
     </footer>
 
+    <!-- ============================================
+         JAVASCRIPT - Makes the website interactive
+         ============================================ -->
     <script>
-        // Navbar scroll effect
+        // NAVIGATION BAR SHRINKING
+        // Makes the navigation bar smaller when you scroll down the page
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+            if (window.scrollY > 50) {           // If scrolled more than 50 pixels
+                navbar.classList.add('scrolled'); // Add the 'scrolled' class
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.classList.remove('scrolled'); // Remove it when at top
             }
         });
 
-        // Hero slideshow
+        // HERO BACKGROUND SLIDESHOW
+        // Automatically changes the background color every 5 seconds
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
         
         function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('active'); // Hide current slide
+            currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
+            slides[currentSlide].classList.add('active');    // Show new slide
         }
         
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 5000); // Change slide every 5000 milliseconds (5 seconds)
 
-        // Smooth scrolling
+        // SMOOTH SCROLLING
+        // Makes clicking on menu items smoothly scroll to that section
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+                e.preventDefault(); // Prevent default jump behavior
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth',  // Smooth scroll animation
+                        block: 'start'       // Align to top of viewport
                     });
                 }
             });
         });
 
-        // Scroll to contact
+        // SCROLL TO CONTACT BUTTON FUNCTION
+        // Used by the consultation buttons to scroll to contact section
         function scrollToContact() {
             document.getElementById('contact').scrollIntoView({
                 behavior: 'smooth',
@@ -1021,72 +1097,57 @@
             });
         }
 
-        // Fade in animation on scroll
+        // FADE-IN ANIMATION ON SCROLL
+        // Makes elements fade in as you scroll down the page
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1,              // Trigger when 10% visible
+            rootMargin: '0px 0px -50px 0px' // Trigger 50px before entering viewport
         };
 
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                if (entry.isIntersecting) { // If element is visible
+                    entry.target.classList.add('visible'); // Add visible class
                 }
             });
         }, observerOptions);
 
+        // Apply fade-in animation to all elements with 'fade-in' class
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-       // ✅ AJAX form submission to FormSubmit
-              document.getElementById("contactForm").addEventListener("submit", async function (e) {
-                e.preventDefault();
-                const form = e.target;
-                const data = new FormData(form);
-                const statusDiv = document.getElementById("form-status");
-            
-                try {
-                  const response = await fetch("https://formsubmit.co/ajax/denniskress04@gmail.com", {
+        // CONTACT FORM SUBMISSION
+        // Sends form data to FormSubmit service when form is submitted
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+            e.preventDefault(); // Prevent normal form submission
+            const form = e.target;
+            const data = new FormData(form);
+            const statusDiv = document.getElementById("form-status");
+        
+            try {
+                // Send form data to FormSubmit
+                const response = await fetch("https://formsubmit.co/ajax/denniskress04@gmail.com", {
                     method: "POST",
                     body: data,
                     headers: { 'Accept': 'application/json' }
-                  });
-            
-                  if (response.ok) {
+                });
+        
+                if (response.ok) {
+                    // Success message
                     statusDiv.textContent = "Thank you! We'll be in touch shortly.";
-                    form.reset();
-                  } else {
+                    form.reset(); // Clear the form
+                } else {
+                    // Error message
                     statusDiv.textContent = "Oops! Something went wrong. Please try again.";
-                  }
-                } catch (error) {
-                  statusDiv.textContent = "Network error. Please try again later.";
                 }
-            
-                statusDiv.style.display = "block";
-              });
-
-                    // Newsletter form (optional, not AJAX yet)
-                      document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
-                        e.preventDefault();
-                        alert('Welcome to the Forrester Designs community! Check your email for a special welcome gift.');
-                        this.reset();
-                      });
-                    </script>
-                    </body>
-                </html>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-                <div class="blog-card fade-in">
-                    <div class="blog-image" style="background: linear-gradient(135deg, var(--forest-deep), var(--moss));"></div>
-                    <div class="blog-content">
-                        <div class="blog-meta">Project Spotlight</div>
-                        <h3>Behind the Design: Woodland Retreat</h3>
-                        <p>Take a journey through our design process as we transform a traditional home into a modern forest sanctuary.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            } catch (error) {
+                // Network error message
+                statusDiv.textContent = "Network error. Please try again later.";
+            }
+        
+            statusDiv.style.display = "block"; // Show the message
+        });
+    </script>
+</body>
+</html>
